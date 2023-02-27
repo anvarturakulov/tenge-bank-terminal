@@ -1,0 +1,32 @@
+.header-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-list-item {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid transparent;
+    color: #827a7a;
+    font-weight: 500;
+}
+
+.width10 {
+    width: 10px;
+}
+
+.width100 {
+    width: 180px;
+}
+
+.width30 {
+    width: 100px;
+}
+
+.bg-yellow {
+    background: yellow;
+}
