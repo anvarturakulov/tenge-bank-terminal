@@ -1,6 +1,6 @@
 import './settings.css'
 
-const Settings = ({ korr }) => {
+const Settings = ({ korrs }) => {
     
     return (
         <div>
@@ -11,10 +11,10 @@ const Settings = ({ korr }) => {
                 <div className='title-item'>Вал дебет счет</div>
             </div>
             <div className="settings-box">
-                <input type="text" className='input-set' value={korr.sumKredit} name='sumKredit'/>
-                <input type="text" className='input-set' value={korr.sumDebet} name='sumDebet' />
-                <input type="text" className='input-set' value={korr.valKredit} name='valKredit' />
-                <input type="text" className='input-set' value={korr.valDebet} name='valDebet' />
+                <input type="text" className='input-set' value={korrs.sumKredit} name='sumKredit'/>
+                <input type="text" className='input-set' value={korrs.sumDebet} name='sumDebet' />
+                <input type="text" className='input-set' value={korrs.valKredit} name='valKredit' />
+                <input type="text" className='input-set' value={korrs.valDebet} name='valDebet' />
             </div>
         </div>
 

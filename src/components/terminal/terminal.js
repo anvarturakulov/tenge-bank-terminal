@@ -9,7 +9,7 @@ const numberDivide = (text) => {
     return val
 }
 
-const Terminal = ({ terminal, order }) => {
+const Terminal = ({ terminal, order, deleteTerminal}) => {
 
     const inputChange = (e) => {
         let numberInputs = ['sum', 'val', 'saleVal', 'buyVal', 'remainVal']
@@ -21,14 +21,15 @@ const Terminal = ({ terminal, order }) => {
     return (
         <div className="terminal-item">
             <div className="order width10">{order + 1}</div>
-            <input type="text" className='input-box width100' value={terminal.name} onChange={inputChange} name='name' />
+            <input type="text" className='input-box width20' value={terminal.name} onChange={inputChange} name='name' />
             <input type="text" className='input-box width30' onChange={inputChange} name='sum' />
-            <input type="text" className='input-box width100 bg-yellow' onChange={inputChange} name='rsSum' />
+            <input type="text" className='input-box width100 bg-yellow' value={terminal.rsSum} onChange={inputChange} name='rsSum' />
             <input type="text" className='input-box width30' onChange={inputChange} name='val' />
-            <input type="text" className='input-box width100 bg-yellow' onChange={inputChange} name='rsVal' />
-            <input type="text" className='input-box width30' onChange={inputChange} name='saleVal' />
-            <input type="text" className='input-box width30' onChange={inputChange} name='buyVal' />
-            <input type="text" className='input-box width30' onChange={inputChange} name='remainVal' />
+            <input type="text" className='input-box width100 bg-yellow' value={terminal.rsVal} onChange={inputChange} name='rsVal' />
+            <input type="text" className='input-box width20' onChange={inputChange} name='saleVal' />
+            <input type="text" className='input-box width20' onChange={inputChange} name='buyVal' />
+            <input type="text" className='input-box width20' onChange={inputChange} name='remainVal' />
+            <div className='btn-delete' onClick={() => deleteTerminal(terminal.id)}>-</div>
         </div>
     )
 }

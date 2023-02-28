@@ -14,16 +14,6 @@
     margin: 30px auto;
 }
 
-.title {
-    text-align: center;
-    font-size: 30px;
-    color: #282c34;
-    font-weight: 700;
-    border-bottom: 1px solid #282c34;
-    margin-top: 50px;
-    padding-bottom: 10px;
-}
-
 .btn {
     margin-right: 20px;
     border: 1px solid #e5e5e5;
@@ -38,7 +28,12 @@
 }
 
 .secondary-btn {
-    background-color: rgb(176, 176, 156);
+    background-color: rgb(207, 207, 191);
+}
+
+.secondary-btn:hover {
+    background-color: orange;
+    transition: all 0.5s ease-out;
 }
 
 .btn-box {
@@ -54,4 +49,14 @@
     margin-right: 50px;
     font-size: 20px;
     font-weight: 400;
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+    color: #282c34;
+    font-weight: 700;
+    border-bottom: 1px solid #282c34;
+    margin-top: 50px;
+    padding-bottom: 10px;
 }
