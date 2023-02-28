@@ -1,0 +1,21 @@
+.settings-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.input-set {
+    font-size: 18px;
+    width: 250px;
+    padding: 10px;
+}
+
+.title-item {
+    width: 250px;
+}
+
+.settings-header {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}

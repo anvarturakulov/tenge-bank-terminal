@@ -19,6 +19,9 @@
     font-size: 30px;
     color: #282c34;
     font-weight: 700;
+    border-bottom: 1px solid #282c34;
+    margin-top: 50px;
+    padding-bottom: 10px;
 }
 
 .btn {
@@ -46,7 +49,7 @@
     display: flex;
 }
 
-.btn-box .title {
+.btn-box .title-box {
     /* text-align: left; */
     margin-right: 50px;
     font-size: 20px;
