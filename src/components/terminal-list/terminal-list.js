@@ -3,7 +3,7 @@ import Terminal from '../terminal'
 
 import './terminal-list.css'
 
-const TerminalList = ({ type, terminals, deleteTerminal, addTerminal }) => {
+const TerminalList = ({ type, terminals, deleteTerminal, addTerminal, changeTerminalsInputs, calculateRemainUsd }) => {
     return (
         <>
             <div className="title">{type}</div>
@@ -11,7 +11,7 @@ const TerminalList = ({ type, terminals, deleteTerminal, addTerminal }) => {
             <div className="terminal-list">
                 {
                     terminals.filter(item => item.type == type).map((element, index) => {
-                        return <Terminal terminal={element} key={element.id} order={index} deleteTerminal={deleteTerminal} />
+                        return <Terminal terminal={element} key={element.id} order={index} deleteTerminal={deleteTerminal} changeTerminalsInputs={changeTerminalsInputs} calculateRemainUsd={calculateRemainUsd}/>
                     })
                 }
                 <button className='btn secondary-btn' onClick={()=> addTerminal(type)}>Добавить терминал</button>

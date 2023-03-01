@@ -6,16 +6,23 @@
 
 .input-set {
     font-size: 18px;
-    width: 250px;
+    width: 220px;
     padding: 10px;
 }
 
 .title-item {
-    width: 250px;
+    width: 220px;
 }
 
 .settings-header {
     margin: 20px 0;
     display: flex;
     justify-content: space-between;
+}
+
+.settings-title {
+    margin: 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    color: green;
 }

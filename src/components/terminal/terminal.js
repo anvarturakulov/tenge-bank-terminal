@@ -1,34 +1,72 @@
 import './terminal.css'
+import NumberDivide from '../../reports/number-divide'
 
-const numberDivide = (text) => {
-    let val = text.replace(/[^0-9.]/g, '');
-    if (val.indexOf(".") != '-1') {
-        val = val.substring(0, val.indexOf(".") + 3);
-    }
-    val = val.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-    return val
-}
 
-const Terminal = ({ terminal, order, deleteTerminal}) => {
+const Terminal = ({ terminal, order, deleteTerminal, changeTerminalsInputs, calculateRemainUsd }) => {
 
-    const inputChange = (e) => {
-        let numberInputs = ['sum', 'val', 'saleVal', 'buyVal', 'remainVal']
+    const inputChange = (e, id) => {
+        let numberInputs = ['sum', 'usd', 'saleUsd', 'buyUsd']
+
         if (numberInputs.includes(e.target.name)) {
-            e.target.value = numberDivide(e.target.value)
+            e.target.value = NumberDivide(e.target.value)
+            calculateRemainUsd(e, id)
         }
+        changeTerminalsInputs(e, id)
     }
 
     return (
         <div className="terminal-item">
             <div className="order width10">{order + 1}</div>
-            <input type="text" className='input-box width20' value={terminal.name} onChange={inputChange} name='name' />
-            <input type="text" className='input-box width30' onChange={inputChange} name='sum' />
-            <input type="text" className='input-box width100 bg-yellow' value={terminal.rsSum} onChange={inputChange} name='rsSum' />
-            <input type="text" className='input-box width30' onChange={inputChange} name='val' />
-            <input type="text" className='input-box width100 bg-yellow' value={terminal.rsVal} onChange={inputChange} name='rsVal' />
-            <input type="text" className='input-box width20' onChange={inputChange} name='saleVal' />
-            <input type="text" className='input-box width20' onChange={inputChange} name='buyVal' />
-            <input type="text" className='input-box width20' onChange={inputChange} name='remainVal' />
+            <input
+                type="text"
+                className='input-box width20'
+                value={terminal.name}
+                onChange={(e) => inputChange(e, terminal.id)}
+                name='name' />
+            <input
+                type="text"
+                className='input-box width30'
+                value={terminal.sum}
+                onChange={(e) => inputChange(e, terminal.id)}
+                name='sum' />
+            <input
+                type="text"
+                className='input-box width100 bg-yellow'
+                value={terminal.rsSum}
+                onChange={(e) => inputChange(e, terminal.id)}
+                name='rsSum' />
+            <input
+                type="text"
+                className='input-box width30'
+                value={terminal.usd}
+                onChange={(e) => inputChange(e, terminal.id)}
+                name='usd' />
+            <input
+                type="text"
+                className='input-box width100 bg-yellow'
+                value={terminal.rsUsd}
+                onChange={(e) => inputChange(e, terminal.id)}
+                name='rsUsd' />
+            <input
+                type="text"
+                className='input-box width20'
+                value={terminal.saleUsd}
+                onChange={(e) => inputChange(e, terminal.id)}
+                name='saleUsd' />
+            <input
+                type="text"
+                className='input-box width20'
+                value={terminal.buyUsd}
+                onChange={(e) => inputChange(e, terminal.id)}
+                name='buyUsd' />
+            <input
+                type="text"
+                className='input-box width20'
+                value={terminal.remainUsd}
+                disabled
+                // onChange={(e) => inputChange(e, terminal.id)}
+                name='remainUsd' />
+
             <div className='btn-delete' onClick={() => deleteTerminal(terminal.id)}>-</div>
         </div>
     )
