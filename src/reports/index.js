@@ -5,7 +5,8 @@ const reportToText = (report) => {
     let strReport = ''
     for (let i = 0; i < report.length; i++) {
         const { title, debet, kredit, summa, detail } = report[i]
-        let str = `${i + 1}) ${title}\n Дебет: ${debet}\n Кредит: ${kredit}\n Сумма: ${summa}\n Детали платежа: ${detail}\n`
+        let str = `${i + 1}) ${title}\n ${debet}\n ${kredit}\n Сумма: ${summa}\n Детали платежа: ${detail}\n`
+
         strReport += str
     }
 
@@ -155,12 +156,12 @@ export const CashBack = (data) => {
         usdToSumBuy = NumberDivide(`${usdToSumBuy}`)
         profitUsdBuy = NumberDivide(`${profitUsdBuy}`)
 
-        if (item.saleUsd.length > 0) {
+        if (item.buyUsd.length > 0) {
             // проводка если есть продажа - Сум экв и доход
             report.push(new Entry(
                 'Расходный кассовый ордер',
-                item.rsSum,
                 korrs.usdCash17101000,
+                item.rsSum,
                 usdToSumBuy,
                 'Сум экв. от купленной ин. валюты через банкомат',
                 'сум',
