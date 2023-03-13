@@ -60,3 +60,13 @@
     margin-top: 50px;
     padding-bottom: 10px;
 }
+
+.total-text{
+    /* text-decoration: underline; */
+    border-top: 1px solid darkgreen;
+    border-bottom: 1px solid darkgreen;
+    padding: 5px 0;
+
+    color:darkgreen;
+    text-align: left;
+}

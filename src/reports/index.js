@@ -168,8 +168,8 @@ export const CashBack = (data) => {
                 item.name,
                 item.type,
                 'sale-buy-sum',
-                korrs.courseUsdSale,
                 korrs.courseUsdBuy,
+                korrs.courseUsdSale,
                 item.buyUsd))
 
             // проводка если есть продажа - Курсовая разница от продажи
@@ -183,8 +183,8 @@ export const CashBack = (data) => {
                 item.name,
                 item.type,
                 'sale-buy-sum',
-                korrs.courseUsdSale,
                 korrs.courseUsdBuy,
+                korrs.courseUsdSale,
                 item.buyUsd))
         }
 
